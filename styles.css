@@ -1,0 +1,373 @@
+/****************************************
+
+  CSS Reset
+
+*****************************************/
+/* Box sizing */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Set core body defaults */
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles and padding on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Anchor elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/****************************************
+
+  Base Selectors
+
+*****************************************/
+body {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.15s ease-in-out;
+}
+
+a:hover:not(.hamburger__icon, .password-view-icon),
+a:active:not(.hamburger__icon, .password-view-icon) {
+  color: gray;
+  text-decoration: underline;
+  transition: color 0.15s ease-in-out;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+nav,
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+nav {
+  top: 0;
+  margin-top: 1rem;
+}
+
+footer {
+  bottom: 0;
+}
+
+/****************************************
+
+  Custom Selectors
+
+*****************************************/
+.nav-menu,
+.footer-menu {
+  display: flex;
+}
+
+.nav-menu {
+  margin: 0 auto;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger__menu {
+  display: none;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  text-align: right;
+  font-size: 1.5rem;
+  margin-right: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.hamburger__menu li {
+  padding: 1rem;
+}
+
+.nav-menu__link,
+.footer-menu__link {
+  display: inline-block;
+  margin: 0;
+  padding: 10.575px 25px;
+  font-size: 1.5rem;
+}
+
+.logo {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.5rem;
+}
+
+.landing {
+  background: url(images/angelina-litvin-S6wHfOpdGkY-unsplash.jpg) no-repeat fixed;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  padding: 6rem 6rem 0;
+}
+
+.landing__mission,
+.landing__signup {
+  width: 25vw;
+  margin: auto;
+}
+
+.landing__signup {
+  text-align: center;
+}
+
+.landing__mission__hero,
+.landing__signup__title {
+  margin: 0;
+}
+
+.landing__mission__hero {
+  font-size: 4rem;
+}
+
+.landing__mission__quote {
+  font-size: 1.5rem;
+}
+
+.landing__signup__title,
+.footer-menu__link {
+  font-variant: small-caps;
+  font-size: 1.5rem;
+}
+
+.landing__signup__form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+  margin: 1.5rem 0;
+}
+
+.landing__signup__form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.landing__signup__form__field {
+  display: flex;
+}
+
+.landing__signup__form__field input,
+.landing__signup__form__submit {
+  width: 100%;
+}
+
+.landing__signup__form__field input {
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.1s ease-in-out;
+}
+
+.landing__signup__form__field input::placeholder {
+  color: white;
+}
+
+.landing__signup__form__field input:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.landing__signup__form__field + .landing__signup__form__field {
+  border-top: 0.5px solid white;
+}
+
+.landing__signup__form__field input,
+.landing__signup__form__submit {
+  padding: 16px;
+}
+
+.landing__signup__form__submit {
+  background-color: #2c99ed;
+  color: white;
+  transition: all 0.1s ease-in-out;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.landing__signup__form__submit:hover,
+.landing__signup__form__submit:active {
+  background-color: #0051ff;
+}
+
+.landing__signup__tos > div {
+  color: gray;
+}
+
+.password-view-icon {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+}
+
+.password-view-icon:hover {
+  color: black;
+}
+
+/****************************************
+
+  Utils
+
+*****************************************/
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/****************************************
+
+  Media Queries
+
+*****************************************/
+@media screen and (max-width: 1615px) { 
+  .landing__mission__hero {
+    font-size: 3.5rem;
+  }
+
+  .landing__mission__quote {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1415px) { 
+  .landing__mission__hero {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1215px) { 
+  .landing__mission__hero {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .landing {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .landing__mission,
+  .landing__signup {
+    width: 50vw;
+  }
+
+  .landing__mission {
+    text-align: center;
+    margin: 10rem auto 0;
+  }
+
+  .landing__signup {
+    margin: 5rem auto 5rem;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  footer,
+  .footer-menu {
+    position: initial;
+    flex-direction: column;
+  }
+  
+  footer {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) { 
+  .landing__mission,
+  .landing__signup {
+    width: 75vw;
+  }
+}
+
+@media screen and (max-width: 415px) { 
+  .landing__mission,
+  .landing__signup {
+    width: 90vw;
+  }
+
+  .landing__mission {
+    margin: 6rem auto 0;
+  }
+
+  .landing__signup {
+    margin: 2rem auto 2rem;
+  }
+
+  nav,
+  footer {
+    padding: 0 1rem;
+  }
+
+  .hamburger__menu {
+    margin-right: 1rem;
+  }
+}
