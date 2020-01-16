@@ -65,8 +65,8 @@ a {
   transition: color 0.15s ease-in-out;
 }
 
-a:hover:not(.hamburger__icon, .password-view-icon),
-a:active:not(.hamburger__icon, .password-view-icon) {
+a:hover:not(.hamburger__icon):not(.password-view-icon),
+a:active:not(.hamburger__icon):not(.password-view-icon) {
   color: gray;
   text-decoration: underline;
   transition: color 0.15s ease-in-out;
